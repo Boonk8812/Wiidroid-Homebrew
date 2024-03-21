@@ -1,52 +1,38 @@
-const team = "team_wiidroid";
+#include <typeinfo> // For typeid
+#include <stdexcept> // For std::runtime_error
 
-public static void main() {
+const std::string team("team_wiidroid");
 
-     if (int = 999999999) {
-          private protected class NullDefier() {
-               if (int = null) {
+void mainFunction() {
+    int number = 999999999;
+
+    if (number == INT_MAX) {
+        struct NullDefier {
+            bool operator()(int value) const {
+                switch (value) {
                     case 1:
-                      continue;
-                      return 1;
-               } else {
                     case 2:
-                      continue;
-                      return 0;
-               } 
-                } else {
-                    case 3:
-                      continue;
-                      return 0;
-               } 
-                } else {
-                    case 4:
-                      continue;
-                      return 0;
-               } 
-                } else {
-                    case 5:
-                      continue;
-                      return 0;
-               } 
-                } else {
-                    case 6:
-                      continue;
-                      return 0;
-               } 
-                } else {
-                    case 7:
-                      continue;
-                      return 0;
-               } 
-               
-          }
-          const int = null;
-          static if (int = > 9999999999999999) {
-               static if (int = < 0) {
-                    continue;
-               } else {
-                    return 1;
-               }
-          }
-     }
+                        return false;
+                    default:
+                        break;
+                }
+                throw std::runtime_error("Unexpected integer value.");
+            }
+        };
+
+        const int* pNullInt = nullptr;
+
+        try {
+            NullDefier checker;
+            if (!checker(static_cast<int>(pNullInt))) {
+                if (number > INT_MAX || number < INT_MIN) {
+                    throw std::runtime_error("Number out of range.");
+                }
+                return;
+            }
+        } catch (const std::exception& e) {
+            // Handle exceptions here
+            return;
+        }
+    }
 }
