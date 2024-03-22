@@ -1,13 +1,5 @@
 #include <iostream>
 
-class Wid {
-public:
-    std::string wid = "10474462927130101994728232316393730778344405532251604410001, B4002826AF30C8BEF00E432190BCFADE0C0E8FB297F";
-};
+class WID {
 
-int main() {
-    Wid w;
-    std::cout << "Wid: " << w.wid << std::endl;
-    
-    return 0;
-}
+};
