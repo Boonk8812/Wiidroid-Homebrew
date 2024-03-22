@@ -1,38 +1,24 @@
-#include <typeinfo> // For typeid
-#include <stdexcept> // For std::runtime_error
+#include <iostream>
+using namespace std;
 
-const std::string team("team_wiidroid");
+int main() {
+    int *ptr = nullptr; // Initialize ptr as a null pointer
 
-void mainFunction() {
-    int number = 999999999;
+    cout << "Before dereferencing:" << endl;
+    cout << "Address of ptr: " << &ptr << endl;
+    cout << "Value of ptr: " << ptr << endl;
 
-    if (number == INT_MAX) {
-        struct NullDefier {
-            bool operator()(int value) const {
-                switch (value) {
-                    case 1:
-                    case 2:
-                        return false;
-                    default:
-                        break;
-                }
-                throw std::runtime_error("Unexpected integer value.");
-            }
-        };
-
-        const int* pNullInt = nullptr;
-
-        try {
-            NullDefier checker;
-            if (!checker(static_cast<int>(pNullInt))) {
-                if (number > INT_MAX || number < INT_MIN) {
-                    throw std::runtime_error("Number out of range.");
-                }
-                return;
-            }
-        } catch (const std::exception& e) {
-            // Handle exceptions here
-            return;
-        }
+    try {
+        int i = *ptr; // Attempt to dereference a null pointer
+    } catch (bad_alloc& e) {
+        cout << "A bad_alloc exception occurred." << endl;
+    } catch (...) {
+        cout << "An unknown exception occurred." << endl;
     }
+
+    cout << "\nAfter dereferencing:\n";
+    cout << "Address of ptr: " << &ptr << endl;
+    cout << "Value of ptr: " << ptr << endl;
+
+    return 0;
 }
