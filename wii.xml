@@ -1,0 +1,4 @@
+<wii>
+  <homebrew version="1.0 custom wiidroid" encoding="utf-8">
+  <code>|cmake|src#$, WiidroidHomebrew;</code>
+</wii>
