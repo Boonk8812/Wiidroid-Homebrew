@@ -1,5 +1,4 @@
-#include <wii.xml>
-#include <wiidroid.cpp"
+#include <wiidroid.cpp>
 #include <iostream>
 
 class wid_wii_id {
